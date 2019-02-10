@@ -33,10 +33,17 @@ class App extends Component {
                     // kecuali data array[i] == index
                     // i adalah index dari data array this.state.characters
                     // index adalah nilai inputan fungsi removeCharacter
-                    return i !== index
+                    return character.id !== index
                 })
             }
         )
+
+        const url = 'http://flask-rest-api-maverick.herokuapp.com/api/v1/mahasiswa/'+index
+
+        axios.delete(url)
+            .then(res => {
+                console.log(res)
+            })
     }
 
     handleSubmit = character => {

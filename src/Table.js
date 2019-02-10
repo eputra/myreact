@@ -15,12 +15,12 @@ const TableHeader = () => {
 const TableBody = props => {
     const { characterData, removeCharacter } = props
 
-    const rows = characterData.map((row, index) => {
+    const rows = characterData.map((row) => {
         return (
-            <tr key={index}>
+            <tr key={row.id}>
                 <td>{row.name}</td>
                 <td>{row.nim}</td>
-                <td><button onClick={() => removeCharacter(index)}>Delete</button></td>
+                <td><button onClick={() => removeCharacter(row.id)}>Delete</button></td>
             </tr>
         )
     })
