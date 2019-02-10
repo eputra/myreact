@@ -4,4 +4,4 @@ import App from './App'
 import Api from './Api'
 import './index.css'
 
-ReactDOM.render(<Api />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

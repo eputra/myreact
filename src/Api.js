@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 class Api extends Component {
     state = {
@@ -7,13 +8,12 @@ class Api extends Component {
 
     // Code is invoked after the component is mounted/inserted into the DOM tree.
     componentDidMount() {
-        const url = "https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin*"
-
-        fetch(url)
-            .then(result => result.json())
-            .then(result => {
+        const url = 'http://flask-rest-api-maverick.herokuapp.com/api/v1/mahasiswa'
+        axios.get(url)
+            .then(res => {
+                console.log(res)
                 this.setState({
-                    data: result
+                    data: res.data.mahasiswa
                 })
             })
     }
