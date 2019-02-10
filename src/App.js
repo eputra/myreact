@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 import Table from './Table'
 import Form from './Form'
 
@@ -6,6 +7,17 @@ class App extends Component {
     // membuat data state this.state.characters
     state = {
         characters: []
+    }
+
+    componentDidMount() {
+        const url = 'http://flask-rest-api-maverick.herokuapp.com/api/v1/mahasiswa'
+        axios.get(url)
+            .then(res => {
+                console.log(res)
+                this.setState({
+                    characters: res.data.mahasiswa
+                })
+            })
     }
 
     removeCharacter = index => {

@@ -20,7 +20,7 @@ class Form extends Component {
 
     initialState = {
         name: '',
-        job: ''
+        nim: ''
     }
     
     state = this.initialState
@@ -49,7 +49,7 @@ class Form extends Component {
 
         const body = {
                 name: this.state.name,
-                nim: this.state.job
+                nim: this.state.nim
         }
 
         const url = 'http://flask-rest-api-maverick.herokuapp.com/api/v1/mahasiswa'
@@ -63,7 +63,7 @@ class Form extends Component {
     }
 
     render() {
-        const {name, job} = this.state
+        const {name, nim} = this.state
 
         return (
             <form>
@@ -76,8 +76,8 @@ class Form extends Component {
                 <label>NIM</label>
                 <input
                     type="text"
-                    name="job"
-                    value={job}
+                    name="nim"
+                    value={nim}
                     onChange={this.handleChange}/>
                 <input
                     type="button"
